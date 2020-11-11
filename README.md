@@ -42,7 +42,7 @@ arguments:
 #### Step 2: Identifying pockets
 To identify the pocket residues, where the substrates bind to the protease, we use the coordinates of the reference substrate residues within P4-P4’ pockets. The reference substrate chosen should be stretched across pockets S4-S4’, or, failing that, the longest available. Protease residues with at least one atom within a defined from the substrate are considered to form a binding pocket. We then project the annotation from the reference substrate to target substrates to assign each substrate residue a pocket where it binds.
 
-**NOTE:** This analysis requires two additional steps. The first is selecting a reference structure. The second in superimposing of the proteases of interest with a selected reference structure (we suggest using PDBeFold) and obtaining new superimposed coordinates of the structures.
+**NOTE:** This analysis requires two additional steps. The first is selecting a reference structure. The second is superimposing of the proteases of interest with a selected reference structure (we suggest using PDBeFold) and obtaining new superimposed coordinates of the structures.
 
 ## Examples
 
