@@ -6,7 +6,7 @@
 
 ## Purpose
 
-The goal of these scripts is to provide an example workflow of the protease-peptide structure annotation prior to the modelling step described in [https://github.com/rochoa85/Modelling-Protease-Substrates](https://github.com/rochoa85/Modelling-Protease-Substrates). The first script is focused on the annotation of the proteases with necessary information from publicly available resources. The second script allows the annotation and assignment of the binding pockets to each substrate residue using the reference substrate, and projecting the obtained pockets to other target substrates.
+The goal of these scripts is to provide an example workflow of the protease-peptide structure annotation prior to the modelling step described in [https://github.com/rochoa85/Modelling-Protease-Substrates](https://github.com/rochoa85/Modelling-Protease-Substrates). The first script is focused on the annotation of the proteases with necessary information from publicly available resources. The second script allows the assignment of the binding pockets to each substrate residue by using the annotation of the reference substrate and protease.
 
 ## Extra files required
 
