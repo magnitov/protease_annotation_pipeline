@@ -1,0 +1,42 @@
+PA
+PB
+PC
+PD
+PE
+PF
+PG
+PH
+PI
+PJ
+PK
+PL
+PM
+PN
+PO
+PP
+PQ
+PR
+PS
+PT
+PU
+PV
+PW
+PX
+PY
+PZ
+Pa
+Pb
+L001 ACE1:c, PRO2:c, ALA3:c, PHL4:c, POL5:c
+l001 ACE 1(c) to POL 5(c)
+L002 ACE1:e, PRO2:e, ALA3:e, PHL4:e, POL5:e
+l002 ACE 1(e) to POL 5(e)
+L003 ACE1:d, PRO2:d, ALA3:d, PHL4:d, POL5:d
+l003 ACE 1(d) to POL 5(d)
+L004 ACE1:f, PRO2:f, ALA3:f, PHL4:f, POL5:f
+l004 ACE 1(f) to POL 5(f)
+L005 MES302:K
+l005 MES 302(K)
+L006 MES101:e
+l006 MES 101(e)
+MCL green
+MMG green
