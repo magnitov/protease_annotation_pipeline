@@ -54,7 +54,7 @@ For this step we provided a sample data of 7 proteases from major protease famil
 3tjv,PRO-THR-SER-TYR-ALA-GLY-ASP-ASP-SER
 ```
 
-The following command will do the annotation: `python 01_run_annotation.py --input sample_data_annotation.csv`
+The following command runs the annotation: `python 01_run_annotation.py --input sample_data_annotation.csv`
 
 After running this comand, the annotated dataset will be saved to **annotated_dataset.csv**. It will include to following fields:
 
