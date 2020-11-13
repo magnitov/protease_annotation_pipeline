@@ -27,7 +27,7 @@ To perform the annotation of the IDs and catalytic residues, two files from the 
 ## Implementation
 
 #### Step 1: Annotating the dataset
-First, proteases are annotated with ligand and protein PDB chains, EC number, UniProt and MEROPS IDs. The search for EC number and UniProt ID is performed using the obtained PDBsum database file, and the search for MEROPS ID is performed via UniProt REST API. Second, the protein chains bound to the ligand are annotated with a list of the catalytic residues. This step is performed using the obtained M-CSA database file.
+First, proteases are annotated with ligand and protein PDB chains, EC number, UniProt and MEROPS IDs. The search for EC number and UniProt ID is performed using the obtained PDBsum database file, and the search for MEROPS ID is performed with UniProt REST API. Second, the protein chains bound to the ligand are annotated with a list of the catalytic residues. This step is performed using the obtained M-CSA database file.
 
 **NOTE:** If any protein chains are not annotated with catalytic residues, one can perform a homology search using the protease sequence in order to infer them.
 
@@ -37,14 +37,14 @@ The basic command line to run the annotation script is:
 python 01_run_annotation.py --input INPUT [--output OUTPUT]
 
 arguments:
-  --input INPUT    Dataset with protease-ligand pairs to annotate
+  --input INPUT    Dataset with protease-ligand pairs
   --output OUTPUT  Path to save the annotated dataset
 ```
 
-#### Step 2: Identifying pockets
-To identify the pocket residues, where the substrates bind to the protease, we use the coordinates of the reference substrate residues within P4-P4’ pockets. The reference substrate chosen should be stretched across pockets S4-S4’, or, failing that, the longest available. Protease residues with at least one atom within a defined from the substrate are considered to form a binding pocket. We then project the annotation from the reference substrate to target substrates to assign each substrate residue a pocket where it binds.
+#### Step 2: Identification of pockets
+To identify the pocket residues we use PDB coordinates of the reference substrate residues. The reference substrate should be stretched across pockets S4-S4’, or, failing that, the longest available. Protease residues with at least one atom within a defined distance from the substrate are considered to form a binding pocket. We then project this annotation of pockets to other substrates within the protease family.
 
-**NOTE:** This analysis requires two additional steps. The first is selecting a reference structure. The second is superimposing of the proteases of interest with a selected reference structure (we suggest using PDBeFold) and obtaining new superimposed coordinates of the structures.
+**NOTE:** This analysis requires two additional steps. The first is selecting a reference structure. The second is superimposing the proteases of interest with a selected reference structure (we suggest using PDBeFold) and obtaining new superimposed coordinates of the structures.
 
 ## Examples
 
@@ -74,5 +74,5 @@ MEROPS_ID: S01.147
 Catalytic_residues: A103ASN, A191THR, A194LYS, A195GLY, A196ASP, A197SER, A198GLY, A59HIS, A99ASN
 ```
 
-#### Step 2: Identifying pockets in reference protease structure
+#### Step 2: Identification of pockets
 
