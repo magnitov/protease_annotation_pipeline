@@ -26,7 +26,14 @@ warnings.filterwarnings('ignore')
 
 def find_ligand(ligand, rasmol_file):
     """
-    Function that finds ligand chain and ligand residue numbers
+    Find ligand chain and ligand residue numbers
+
+    Arguments:
+    ligand -- a list of ligand residue names
+    rasmol_file -- rasmol.dfn file from the PDBsum database
+    
+    Output:
+    Ligand chain and a list of residues as present in the PDB file
     """
 
     ligand_chain = ""
@@ -52,13 +59,22 @@ def find_ligand(ligand, rasmol_file):
 
 ##################################################################################
 
-def find_prot_chain_bound_to_ligand(ligand, residue_number, ligand_chain, grow_out_file):
+def find_prot_chain_bound_to_ligand(ligand, residue_number, ligand_chain, grow_file):
     """
-    Function that finds protein chains that are bound to ligand
+    Find protein chains bound to ligand
+
+    Arguments:
+    ligand -- a list of ligand residue names
+    residue_number -- a list of ligand residue numbers on its PDB chain
+    ligand_chain -- ligand PDB chain
+    grow_file -- grow.out file from the PDBsum database
+    
+    Output:
+    A list of protein chains bound to ligand chain
     """
 
     chains_bound_to_ligand = []
-    for row in grow_out_file:
+    for row in grow_file:
         if row[14:17] == row[14:17].upper() and row[54] == ligand_chain\
            and (row[44:47], int(row[49:53])) in zip(ligand, residue_number):
             if row[6] not in chains_bound_to_ligand:
@@ -67,13 +83,22 @@ def find_prot_chain_bound_to_ligand(ligand, residue_number, ligand_chain, grow_o
 
 ##################################################################################
 
-def find_prot_residues_bound_to_ligand(ligand, residue_number, ligand_chain, grow_out_file):
+def find_prot_residues_bound_to_ligand(ligand, residue_number, ligand_chain, grow_file):
     """
-    Function that finds a list of residues that are bound to ligand
+    Find protein residues bound to ligand
+
+    Arguments:
+    ligand -- a list of ligand residue names
+    residue_number -- a list of ligand residue numbers on its PDB chain
+    ligand_chain -- ligand PDB chain
+    grow_file -- grow.out file from the PDBsum database
+    
+    Output:
+    A list of protein chains bound to ligand chain
     """
 
     residues_bound_to_ligand = []
-    for row in grow_out_file:
+    for row in grow_file:
         if row[14:17] == row[14:17].upper() and row[54] == ligand_chain\
            and (row[44:47], int(row[49:53])) in zip(ligand, residue_number):
             if (row[5:17].replace(' ', '') not in residues_bound_to_ligand) and len(re.findall('\d+', row[5:17].replace(' ', '')[-3:])) == 0:
@@ -84,7 +109,13 @@ def find_prot_residues_bound_to_ligand(ligand, residue_number, ligand_chain, gro
 
 def find_chains(data):
     """
-    Function that combined the search for ligand and protein chain and residues
+    Perform the search for ligand and protein chain and residues as described above
+
+    Arguments:
+    data -- a data frame with PDB code and ligand
+    
+    Output:
+    An updated data frame with information about the ligand and protein added
     """
 
     # Length of the ligand
@@ -124,7 +155,13 @@ def find_chains(data):
 
 def find_ids(data):
     """
-    Function that implements the annotation of EC number, UniProt ID and MEROPS ID
+    Annotate EC number, UniProt ID and MEROPS ID
+
+    Arguments:
+    data -- a data frame with PDB code and information about ligand and protein
+    
+    Output:
+    An updated data frame with IDs added
     """
 
     # Retrieving EC and UniProt IDs from PDBsum annotation file
@@ -193,7 +230,13 @@ def find_ids(data):
 
 def find_catalytic_residues(data):
     """
-    Function that finds catalytic residues
+    Find catalytic residues
+
+    Arguments:
+    data -- a data frame with PDB code and information about ligand and protein
+    
+    Output:
+    An updated data frame with catalytic residues added
     """
     with open('homologues_residues.json', 'r') as f:
         residues = f.readlines() 
@@ -215,6 +258,7 @@ def find_catalytic_residues(data):
 
     data['Catalytic_residues'] = catalytic_residues
     return(data)
+
 
 ########################################################################################
 # Main
