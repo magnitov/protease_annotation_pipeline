@@ -1,7 +1,7 @@
 # Annotation of protease structures
 
 * Rodrigo Ochoa, Mikhail Magnitov, Roman A Laskowski, Pilar Cossio, Janet M Thornton
-* *"Modelling peptide substrates bound to proteases: insights to study binding recognition"*
+* *An automated protocol for modelling peptide substrates to proteases*
 * **Manuscript under the review**
 
 ## Purpose
