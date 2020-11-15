@@ -97,7 +97,7 @@ Catalytic_residues: A103ASN, A191THR, A194LYS, A195GLY, A196ASP, A197SER, A198GL
 
 #### Step 2: Identification of pockets
 
-For this step we provided a sample data of 10 annotated serine proteases as an example in **sample_data_pockets.csv**.
+For this step we provided a sample data of 10 annotated serine proteases as an example in **sample_data_pockets.csv**. It includes our reference structure, four additional structures to refine the pockets, and 5 example structures.
 
 The following command runs the pockets search: `python 02_find_pockets.py --input sample_data_pockets.csv --ref 3tjv --extra_ref 1iau,1ox1,1hne,1ab9 --radius 4.5 --cutoff 2`
 
@@ -115,10 +115,14 @@ S3': ARG41, ARG43, LEU150, LYS42, TYR144
 S4': ARG41, ARG43, GLN34, LEU150, LYS42, LYS75, PHE32
 ```
 
-The assigned pockets, as well as residues and their new numbers for all ligands from the dataset will be stored to **annotated_pockets.csv**. It will include the following new fields (for PDB 3tjv, which is a reference):
+The assigned pockets, as well as residues and their numbers for all truncated ligands from the dataset will be stored to **annotated_pockets.csv**. It will include the following new fields (for PDB 3tjv, which is a reference):
 
 ```
 Truncated_ligand: PRO-THR-SER-TYR-ALA-GLY-ASP-ASP
 Truncated_numbering: 1, 2, 3, 4, 5, 6, 7, 8
 Truncated_pocket_names: S4, S3, S2, S1, S1', S2', S3', S4'
 ```
+
+## Support
+
+In case this workflow is useful for your research and requires any advice, please contact us via email: mikhail.magnitov@phystech.edu
