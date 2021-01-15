@@ -1,8 +1,7 @@
 # Annotation of protease structures
 
-* Rodrigo Ochoa, Mikhail Magnitov, Roman A Laskowski, Pilar Cossio, Janet M Thornton
-* *An automated protocol for modelling peptide substrates to proteases*
-* **Manuscript under the review**
+Rodrigo Ochoa, Mikhail Magnitov, Roman A Laskowski, Pilar Cossio & Janet M Thornton. An automated protocol for modelling peptide substrates to proteases. *BMC Bioinformatics* (2020)
+* doi: [10.1186/s12859-020-03931-6](https://doi.org/10.1186/s12859-020-03931-6)
 
 ## Purpose
 
